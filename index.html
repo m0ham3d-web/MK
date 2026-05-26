@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~MK~</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1>🛒 MK Store</h1>
+                </div>
+                <div class="nav-menu">
+                    <button id="themeToggle" class="theme-toggle">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <button id="authBtn" class="auth-btn">تسجيل الدخول</button>
+                    <button id="logoutBtn" class="auth-btn hidden">تسجيل الخروج</button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="authModal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">تسجيل الدخول</button>
+                    <button class="tab-btn" data-tab="register">إنشاء حساب</button>
+                </div>
+
+                <form id="loginForm" class="auth-form">
+                    <h2>تسجيل الدخول</h2>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" name="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">دخول</button>
+                    <p id="loginError" class="error"></p>
+                </form>
+
+                <form id="registerForm" class="auth-form hidden">
+                    <h2>إنشاء حساب جديد</h2>
+                    <div class="form-group">
+                        <label>اسم المستخدم</label>
+                        <input type="text" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>كلمة المرور</label>
+                        <input type="password" name="password" required minlength="6">
+                    </div>
+                    <button type="submit" class="submit-btn">إنشاء حساب</button>
+                    <p id="registerError" class="error"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="productModal" class="modal hidden">
+            <div class="modal-content product-modal-content">
+                <span class="close">&times;</span>
+                <h2>إضافة منتج جديد</h2>
+                <form id="productForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>اسم المنتج</label>
+                            <input type="text" name="name" required placeholder="أدخل اسم المنتج">
+                        </div>
+                        <div class="form-group">
+                            <label>السعر</label>
+                            <input type="number" name="price" required min="0" step="0.01" placeholder="0.00">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>الكمية</label>
+                            <input type="number" name="quantity" required min="1" placeholder="1">
+                        </div>
+                        <div class="form-group">
+                            <label>صورة المنتج</label>
+                            <input type="file" name="image" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>الوصف</label>
+                        <textarea name="description" rows="4" placeholder="أدخل وصف المنتج"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">حفظ المنتج</button>
+                    <p id="productError" class="error"></p>
+                </form>
+            </div>
+        </div>
+
+        <main class="main-content">
+            <section class="hero">
+                <div class="hero-content">
+                    <h2>مرحباً بك في متجرنا الإلكتروني</h2>
+                </div>
+            </section>
+
+            <section class="products-section">
+                <div class="section-header">
+                    <h2>المنتجات المتاحة</h2>
+                    <button id="addProductBtn" class="add-product-card hidden">
+                        <span class="plus-icon">+</span>
+                        <span>إضافة منتج جديد</span>
+                    </button>
+                </div>
+                <div id="productsGrid" class="products-grid"> 
+
+                </div>
+            </section>
+        </main>
+
+
+        <footer class="footer">
+            <p>&copy; 2026 متجرنا الإلكتروني. جميع الحقوق محفوظة.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
